@@ -17,27 +17,22 @@
     
   }
 
+  $result = $crud->getSpecialties();
+
 ?>
 
       <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title"><?php echo $_POST['firstname'] . ' ' . $_POST['lastname']; ?></h5>
-          <h6 class="card-subtitle mb-2 text-muted"><?php
-            switch($_POST['specialty_id']){
-                case '1':
-                echo 'Database Administrator';
-                break;
-                case '2':
-                echo 'Software Developer';
-                break;
-                case '3':
-                echo 'Web Administrator';
-                break;
-                default:
-                echo 'Other';
-                break;
-            }
-           ?></h6>
+          <h6 class="card-subtitle mb-2 text-muted">
+            <?php
+              while($r = $result->fetch(PDO::FETCH_ASSOC)){
+                if($r['specialty_id'] == $_POST['specialty_id']){
+                  echo $r['name'];
+                }
+              }
+           ?>
+           </h6>
           <hr>
           <p class="card-text">
               <span style="color: #888">Date of Birth : </span><?php echo $_POST['dateofbirth']; ?>

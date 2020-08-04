@@ -29,22 +29,7 @@
 			echo "<td>" . $r['dateofbirth'] . "</td>";
 			echo "<td>" . $r['emailaddress'] . "</td>";
 			echo "<td>" . $r['phone'] . "</td>";
-			echo "<td>";
-			switch($r['specialty_id']){
-                case '1':
-                echo 'Database Administrator';
-                break;
-                case '2':
-                echo 'Software Developer';
-                break;
-                case '3':
-                echo 'Web Administrator';
-                break;
-                default:
-                echo 'Other';
-                break;
-            }
-			echo "</td>";
+			echo "<td>" . $r['name'] . "</td>";
 			echo "</tr>";
 		}
 	?>
