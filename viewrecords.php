@@ -15,10 +15,8 @@
 		<th>#</th>
 		<th>First Name</th>
 		<th>Last Name</th>
-		<th>Date of Birth</th>
-		<th>Email Address</th>
-		<th>Phone Number</th>
 		<th>Specialty</th>
+		<th>Actions</th>
 	</tr>
 	<?php 
 		while($r = $results->fetch(PDO::FETCH_ASSOC)){
@@ -26,10 +24,8 @@
 			echo "<td>" . $r['attendee_id'] . "</td>";
 			echo "<td>" . $r['firstname'] . "</td>";
 			echo "<td>" . $r['lastname'] . "</td>";
-			echo "<td>" . $r['dateofbirth'] . "</td>";
-			echo "<td>" . $r['emailaddress'] . "</td>";
-			echo "<td>" . $r['phone'] . "</td>";
 			echo "<td>" . $r['name'] . "</td>";
+			echo "<td>" . "<a class='btn btn-primary' href='view.php?id=". $r['attendee_id'] . "'>View</a></td>";
 			echo "</tr>";
 		}
 	?>
