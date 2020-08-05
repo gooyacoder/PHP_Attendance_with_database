@@ -25,7 +25,11 @@
 			echo "<td>" . $r['firstname'] . "</td>";
 			echo "<td>" . $r['lastname'] . "</td>";
 			echo "<td>" . $r['name'] . "</td>";
-			echo "<td>" . "<a class='btn btn-primary' href='view.php?id=". $r['attendee_id'] . "'>View</a></td>";
+			echo "<td>";
+			echo "<a class='btn btn-primary' href='view.php?id=". $r['attendee_id'] . "'>View</a>";
+			echo " ";
+			echo "<a class='btn btn-warning' href='edit.php?id=". $r['attendee_id'] . "'>Edit</a>";
+			echo "</td>";
 			echo "</tr>";
 		}
 	?>

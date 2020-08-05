@@ -10,7 +10,7 @@
 
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="/resources/demos/style.css">
-    <link ret="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/site.css" />
 
     <title>Attendance - <?php echo $title; ?></title>
   </head>

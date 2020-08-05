@@ -28,6 +28,25 @@
 			}
 		}
 
+		public function edit($id, $firstname, $lastname, $dateofbirth, $emailaddress, $phone, $specialty_id){
+			try{
+				$sql = "UPDATE `attendee` SET `firstname`=:firstname,`lastname`=:lastname,`dateofbirth`=:dateofbirth,`emailaddress`=:emailaddress,`phone`=:phone,`specialty_id`=:specialty_id WHERE attendee_id=:id";
+				$statement = $this->db->prepare($sql);
+				$statement->bindparam(':firstname', $firstname);
+				$statement->bindparam(':lastname', $lastname);
+				$statement->bindparam(':dateofbirth', $dateofbirth);
+				$statement->bindparam(':emailaddress', $emailaddress);
+				$statement->bindparam(':phone', $phone);
+				$statement->bindparam(':specialty_id', $specialty_id);
+				$statement->bindparam(':id', $id);
+				$statement->execute();
+				return true;
+			}catch(PDOException $e){
+				echo $e->getMessage();
+				return false;
+			}
+		}
+
 		public function getAttendees(){
 			$sql = "SELECT * FROM attendee a inner join specialties s on a.specialty_id = s.specialty_id";
 			$result = $this->db->query($sql);
