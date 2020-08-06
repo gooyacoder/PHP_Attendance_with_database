@@ -29,6 +29,8 @@
 			echo "<a class='btn btn-primary' href='view.php?id=". $r['attendee_id'] . "'>View</a>";
 			echo " ";
 			echo "<a class='btn btn-warning' href='edit.php?id=". $r['attendee_id'] . "'>Edit</a>";
+			echo " ";
+			echo "<a onClick='return confirm(\"Are you sure to delete this record?\");' class='btn btn-danger' href='delete.php?id=". $r['attendee_id'] . "'>Delete</a>";
 			echo "</td>";
 			echo "</tr>";
 		}
