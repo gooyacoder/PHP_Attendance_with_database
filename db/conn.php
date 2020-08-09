@@ -10,12 +10,12 @@
 
 
 	//Production Database
-	$host = 'sql308.epizy.com';
+	/*$host = 'sql308.epizy.com';
 	$db = 'epiz_26456153_a01';
 	$user = 'epiz_26456153';
 	$password = 'VFMblmGA45Boy';
 	$charset = 'utf8mb4';
-	$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+	$dsn = "mysql:host=$host;dbname=$db;charset=$charset";*/
 
 	try{
 
@@ -28,6 +28,12 @@
 
 	require_once 'crud.php';
 
+	require_once 'user.php';
+
 	$crud = new crud($pdo);
+
+	$user = new user($pdo);
+
+	$user->insertUser("admin", "password");
 
  ?>
